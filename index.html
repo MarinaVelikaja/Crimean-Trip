@@ -1,0 +1,299 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+	<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>За золотом! Двухдневный тур на Урал на родину первого русского золота.</title>
+<meta name="viewport" content="width=1024" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+	function ajaxsend_form(id) { //Ajax отправка формы
+    var msg = $("#form"+id).serialize();
+    var delay_popup = 0000;
+    var faults = $('input#input'+id).filter(function() {
+	return $(this).data('required') && $(this).val() === "";
+	}).css({"border-color": "#CF0000"}); // выделяем это поле красным
+	if(faults.length) {return false; }
+	else
+	{
+    $.ajax({
+        type: "POST",
+        url: "php/mail.php",
+        data: msg,
+        success: function(data) {
+            $("#text_send").html(data);
+            setTimeout("document.getElementById('parent_popup').style.display='block'", delay_popup);
+        },
+        error:  function(xhr, str){
+            alert("Возникла ошибка!");
+        }
+    });
+    }
+}
+
+jQuery.fn.notExists = function() { //Проверка на существование элемента
+    return $(this).length == 0;
+}
+</script>
+</head>
+<body>
+<div class="container">
+	<header>
+		<div class="wrap">
+			<a class="logo left" href="/">Crimean Trip</a>
+			<!--<span class="slogan left">Полное собрание путешествий</span>-->
+			<div class="phone right">
+				<span>+7 495 971 73 55</span>
+				<a href="mailto:info@crimeatrip.ru" class="mail">написать нам</a>
+			</div>
+			<div class="clear"></div>
+			<div class="name left">
+				<h1>«Древние города Крыма»<span>Двухдневный <br>экскурсионный тур</span></h1>
+			</div>
+			<form method="post" id="form1" class="bron right" name="bronirovanie" action="javascript:void(0);" onSubmit="ajaxsend_form('1');">
+				<input TYPE="radio" NAME="typeofform[Форма]" VALUE="Бронирование" class="typeofform" CHECKED>              
+	            <input name="name[Имя]" size="40" required placeholder="Ваше имя" type="text">
+				<input name="phone[Телефон]" size="40" required placeholder="Контактный телефон" type="text">
+				<input name="email[Email]" size="40" required placeholder="Электронная почта" type="text">
+				<button name="button" type="submit">Забронировать</button>
+			</form>
+			<div class="clear"></div>
+			<div class="social left">
+				<a href="#" target="_blank" class="vk">&nbsp;</a>
+				<a href="#" target="_blank" class="fb">&nbsp;</a>
+				<a href="#" target="_blank" class="tw">&nbsp;</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="white-line">
+		<div class="wrap">
+			<div class="numbers">2<span>дня</span></div>
+			<div class="numbers">7<span>экскурсий</span></div>
+			<div>спуск в пещеру</div>
+			<div>катание на квадроцикле</div>
+			<div class="price">6 700<span>руб.*</span></div>
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="waitings">
+		<div class="wrap">
+			<h2>Что тебя ждет в путешествии?</h2>
+			<p><span>Два дня экскурсий по пещерным городам Крыма  - Мангуп-Кале и Тепе-Кермен. Ты подымешься на вершину древнейшего города, пройдешь  через знаменитые «Мангупские ворота», познакомишься с ремеслами древних жителей, попробуешь самостоятельно спуститься вглубь пещеры, покатаешься на внедорожниках и покупаешься в горном озере.</span></p> 
+			<p class="green">Тебя ждут два дня необычных приключений, новых впечатлений, интересных  знакомств!</p>
+		</div>
+	</div>
+	<div class="program">
+		<div class="wrap">
+			<h2>Программа тура</h2>
+			<h3>1<span>день</span></h3>
+			<div class="day1">
+				<div class="t11 right"><span>14:00</span><p>Встреча, сбор группы. Знакомство с гидом. Трансфер в Куйбышево на комфортабельном автобусе.<p></div>
+				<div class="t13 left"><span>15:30</span><p>Размещение в номерах отеля, ланч.</p></div>
+				<div class="t14 right"><span>16:30</span><p>Экскурсия на подготовленных внедорожниках с инструкторами.<br>Пещерный город Мангуп-Кале.</p></div>
+				<div class="t15 left"><span>20:00</span><p>Возвращение в отель. Ужин.</p></div>
+				
+			</div>
+			<h3 class="color">2<span>день</span></h3>
+			<div class="day2">
+				
+				<div class="t9 right"><span>9:00</span><p>Завтрак.</p></div>
+				<div class="t10 left"><span>9:30</span><p>Инструктаж по технике безопасности.</p></div>
+				<div class="t11 right"><span>10:00</span><p>Комбинированный тур на джипах и квадроциклах.Тепе-Кермен. </p></div>
+				<div class="t12 left"><span>20:00</span><p>Возвращение в отель. Ужин.</p></div>
+				<div class="t13 right"><span>21:00</span><p>Окончание тура</p></div>
+			</div>
+			<div class="clear"></div>
+			<div class="prices">
+				<h2>Стоимость программы</h2>
+				<div class="price one">
+					<h3>6 700 руб.</h3>
+					<h4>Гостиница<br>"Большой Урал"</h4>
+					<img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница">
+					<p>при размещении в номерах с удобствами на блок</p>
+				</div>
+				<div class="price two">
+					<h3>7 100 руб.</h3>
+					<h4>Гостиница<br>"Большой Урал"</h4>
+					<img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница">
+					<p>при размещении в номерах с удобствами</p>
+				</div>
+				<div class="price three">
+					<h3>7 500 руб.</h3>
+					<h4>Гостиница<br>"Транс Отель"</h4>
+					<img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница">
+					<p>при размещении в номерах с удобствами</p>
+				</div>
+				<div class="price four">
+					<h3>8 900 руб.</h3>
+					<h4>Гостиница<br>"Novotel"</h4>
+					<img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница"><img src="img/star.png" alt="Гостиница">
+					<p>при размещении в номерах с удобствами</p>
+				</div>
+				<div class="clear"></div>
+				<ul class="left">
+					<p>В стоимость включены:</p>
+					<li>внедорожники (автомобиль, топливо, инструктор в каждой машине)</li>
+				    <li>проживание в гостиницах и гостевых домах по программе</li>
+				    <li>услуги гида</li>
+				    <li>страховка на время путешествия</li>
+				</ul>
+				<p class="left">* Дополнительно оплачиваются трансфер до места старта тура (Симферополя) и входные билеты на экскурсионные объекты</p>
+			</div>
+		</div>
+	</div>
+	<div class="bron-big">
+		<div class="wrap">
+			<h3>Забронировать путешествие</h3>
+			<form method="post" name="bronirovanie" id="form2" action="javascript:void(0);" onSubmit="ajaxsend_form('2');">
+				<input TYPE="radio" NAME="typeofform[Форма]" VALUE="Бронирование" class="typeofform" CHECKED>             
+	            <fieldset class="left">
+		            <input name="name[Имя]" required size="40" placeholder="Ваше имя" type="text">
+		            <input name="surname[Фамилия]" required size="40" placeholder="Ваша фамилия" type="text">
+					<input name="phone[Телефон]" required size="40" placeholder="Контактный телефон" type="text">
+					<input name="email[Email]" required size="40" placeholder="Электронная почта" type="text">
+					<textarea name="text[Комментарий]" rows="10" cols="20" placeholder="Комментарий"></textarea>
+				</fieldset>
+				<fieldset class="right">
+					<INPUT name="payment[Депозит]" 
+						         type="radio" 
+						         value="Депозит 3 500 руб."
+						         class="payment"><label>Депозит 3 500 руб.</label>
+					<select name="paymentprice[Оплата]" onFocus="document.bronirovanie.payment[1].checked = true" class="right">
+						<option value="6700">6 700 руб.</option>
+						<option value="7100">7 100 руб.</option>
+						<option value="7500">7 500 руб.</option>
+						<option value="8900">8 900 руб.</option>
+					</select>	
+					<label class="right">Оплатить полностью</label>
+					<INPUT name="payment[Полная оплата]" 
+						   type="radio" 
+						   value="Оплатить полностью"
+						   class="payment right">
+					<div class="clear"></div>	                  
+					<label for="people">Кол-во человек</label><input name="people[Количество человек]" size="40" placeholder="12" type="text" id="people">
+					<input placeholder="Выберите дату" name="date[Дата]" type="date" max="2020-12-31" min="2014-05-03"  id="date" class="right"><label for="date" class="right">Дата тура</label>
+					<FIELDSET>
+						  <LEGEND class="left">Билеты:</LEGEND>
+						  <INPUT name="tickets[Билеты ж/д]" 
+						         type="radio" 
+						         value="Ж/Д"> Ж/Д
+						  <INPUT name="tickets[Билеты авиа]" 
+						         type="radio" 
+						         value="Авиа"> Авиа
+					<label for="night" class="right">Дополнительная ночь</label><INPUT name="night[Дополнительная ночь]" type="checkbox" value="Да" id="night" class="right">
+				</FIELDSET>
+					<div class="clear"></div>
+					<button name="button" type="submit" class="right">Забронировать</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!--<div class="greenline">
+		<div class="wrap">
+			<h2>Мы здесь, чтобы помочь</h2>
+			<div class="clear"></div>
+			<div><h3 class="help1">Огромный опыт</h3><p>У нас большой опыт организации путешествий. 10 лет работы. Более 3 млн обслуженных туристов. Собственные системы бронирования авиа и жд билетов.</p></div>
+			<div><h3 class="help2">Большое покрытие</h3><p>Наши офисы во всех крупных городах России. Единый call-центр<br>с бесплатным номером!</p></div>
+			<div><h3 class="help3">Удобная оплата услуг</h3><p>Разные формы оплаты:<br>картой на нашем сайте, в ближайшем офисе.</p></div>
+		</div>
+	</div>-->
+	<div class="why">
+		<div class="wrap">
+			<h2>Почему мы?</h2>
+			<div class="why1">
+				<h3>Ваш отдых - в удовольствие</h3>
+				<p>Мы учитываем все мелочи, потому что сами проверяем каждый тур во время инспекционных поездок. Выбираем лучшие отели и кафе, ездим на экскурсии, находим дополнительные развлечения. Другие работают удаленно и не могут гарантировать, что в номере будет чисто, обед вам понравится, а экскурсия не будет “скомканной”.</p>
+			</div>
+			<div class="why2">
+				<h3>Вы экономите до 5% на бронировании билетов и отелей </h3>
+				<p>Приобретая билеты через систему Crimean Trip, вы экономите 2-4% по сравнению с другими системами онлайн-бронирования. Как официальный представитель РЖД и ряда авиакомпаний, мы предлагаем самые выгодные цены.</p>
+			</div>
+			<div class="why3">
+				<h3>Мы рядом</h3>
+				<p>Нужна наша помощь? - Обращайтесь в ближайший офис Crimean Trip в вашем городе.<br> 
+				Чтобы быстро решать все вопросы “на месте”, мы открыли 2 тысячи агентств по всей территории России.</p>
+			</div>
+			<div class="why4">
+				<h3>Опыт работы - 10 лет</h3>
+				<p>За это время нам доверили свой отдых более 3 млн туристов.</p>
+			</div>
+			<div class="why5">
+				<h3>Вы экономите на звонках</h3>
+				<p>Звоните в удобное время по номерам в Москве <span>+7 495 971 73 55</span> и Санкт-Петербурге <span>+7 812 940 65 52</span>. 
+				 Работаем круглосуточно.</p>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="wrap">
+			<form method="post" id="form3" class="question" action="javascript:void(0);" onSubmit="ajaxsend_form('3');">  
+				<h2>Остались вопросы?</h2>    
+				<p>Заполни форму и наш консультант перезвонит тебе</p> 
+				<div class="clear"></div>     
+				<input TYPE="radio" NAME="typeofform[Форма]" required VALUE="Консультация эксперта" class="typeofform" CHECKED>  
+	            <input name="name[Имя]" required size="40" placeholder="Ваше имя" type="text" class="questionname">
+				<input name="phone[Телефон]" required size="40" placeholder="Контактный телефон" type="text" class="questionphone">
+				<input name="city[Город]" required size="40" placeholder="Ваш город" type="text" class="questioncity">
+				<button name="button" type="submit">Заказать звонок</button>
+				<div class="clear"></div>
+			</form>
+			<div class="phone left">
+				<span>+7 495 971 73 55</span>
+				<a href="mailto:info@crimeatrip.ru" class="mail">info@crimeatrip.ru</a>
+			</div>
+			<div class="social right">
+				<p>Дружить с нами в соц. сетях:</p>
+				<a href="https://vk.com/rosstur" target="_blank" class="vk">&nbsp;</a>
+				<a href="https://www.facebook.com/rosstur" target="_blank" class="fb">&nbsp;</a>
+				<a href="#" target="_blank" class="tw">&nbsp;</a>
+			</div>
+		</div>
+	</footer>
+	<div id="parent_popup" style="display:none;">
+        <div id="popup">
+          <div class="close"></div>
+          <div class="h">Спасибо!</div>
+          <div class="text">Заявка отправлена,<br>
+дождитесь нашего звонка</div>
+        </div>
+    </div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24880475 = new Ya.Metrika({id:24880475,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24880475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
